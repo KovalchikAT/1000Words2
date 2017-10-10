@@ -34,6 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
-        android:text="@string/chenge_profile"/>
+        android:text="@string/change_profile"/>
 
 </LinearLayout>

@@ -5,4 +5,5 @@ package com.kovalchyk_at.a1000words.menu.view;
  */
 
 public interface MenuView {
+    void onBackPressed();
 }
