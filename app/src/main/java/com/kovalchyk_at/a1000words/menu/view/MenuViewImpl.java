@@ -61,6 +61,7 @@ public class MenuViewImpl implements MenuView, NavigationView.OnNavigationItemSe
 
         fragmentManager = activity.getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment, fragment).commit();
+
     }
 
     private void initListeners() {
@@ -73,7 +74,7 @@ public class MenuViewImpl implements MenuView, NavigationView.OnNavigationItemSe
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            activity.onBackPressed();
+            activity.finish();
         }
     }
 

@@ -52,7 +52,7 @@ public class Fragment3Progress extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View retV = inflater.inflate(R.layout.body2_tabbed_fragment, null);
+        View retV = inflater.inflate(R.layout.fragment2_progress, null);
 
         expList = (ExpandableListView) retV.findViewById(R.id.expand_progress_list);
 

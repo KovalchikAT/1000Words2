@@ -4,6 +4,7 @@ import android.app.Fragment;
 
 import com.kovalchyk_at.a1000words.Body1_tabbed_fragment;
 import com.kovalchyk_at.a1000words.MenuActivity;
+import com.kovalchyk_at.a1000words.menu.fragments.Fragment1SingleTest;
 import com.kovalchyk_at.a1000words.menu.fragments.Fragment3Progress;
 
 /**
@@ -23,7 +24,7 @@ public class MenuPresenterImpl {
             case 0:
                 return new Body1_tabbed_fragment();
             case 1:
-                break;
+                return new Fragment1SingleTest();
             case 2:
                 break;
             case 3:
