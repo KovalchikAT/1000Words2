@@ -1,5 +1,4 @@
 package com.kovalchyk_at.a1000words;
-/** поки не використовується. екземпляр для фрагменту в логінізації*/
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -9,16 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.kovalchyk_at.a1000words.R;
 
-
-public class Body1_tabbed_fragment extends Fragment {
+public class Test0 extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d("fragm1TAG", "myLog");
-        return inflater.inflate(R.layout.body1_tabbed_fragment, null);
+        Log.d("fragm0TAG", "myLog");
+        return inflater.inflate(R.layout.test0_fragment, null);
     }
 }

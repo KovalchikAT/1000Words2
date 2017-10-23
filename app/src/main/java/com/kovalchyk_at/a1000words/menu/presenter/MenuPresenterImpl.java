@@ -2,17 +2,18 @@ package com.kovalchyk_at.a1000words.menu.presenter;
 
 import android.app.Fragment;
 
-import com.kovalchyk_at.a1000words.Body1_tabbed_fragment;
 import com.kovalchyk_at.a1000words.MenuActivity;
-import com.kovalchyk_at.a1000words.menu.fragments.Fragment1SingleTest;
-import com.kovalchyk_at.a1000words.menu.fragments.Fragment3Progress;
+import com.kovalchyk_at.a1000words.fragments.Fragment0StartTeaching;
+import com.kovalchyk_at.a1000words.fragments.Fragment1SingleTest;
+import com.kovalchyk_at.a1000words.fragments.Fragment2Library;
+import com.kovalchyk_at.a1000words.fragments.Fragment3Progress;
 
 /**
  * Created by Kovalchyk_at on 05.10.2017.
  */
 
-public class MenuPresenterImpl {
-   private MenuActivity menuActivitty;
+public class MenuPresenterImpl implements MenuPresenter{
+    private MenuActivity menuActivitty;
 
     public MenuPresenterImpl(MenuActivity menuActivity) {
         this.menuActivitty = menuActivity;
@@ -22,11 +23,11 @@ public class MenuPresenterImpl {
 
         switch (id) {
             case 0:
-                return new Body1_tabbed_fragment();
+                return new Fragment0StartTeaching();
             case 1:
                 return new Fragment1SingleTest();
             case 2:
-                break;
+                return new Fragment2Library();
             case 3:
                 return new Fragment3Progress();
             case 4:

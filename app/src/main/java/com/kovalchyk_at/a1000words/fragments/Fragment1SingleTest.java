@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.menu.fragments;
+package com.kovalchyk_at.a1000words.fragments;
 
 import android.app.Fragment;
 import android.content.res.Configuration;
@@ -12,8 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kovalchyk_at.a1000words.R;
-import com.kovalchyk_at.a1000words.menu.fragments.singletest.Fragment1Item;
-import com.kovalchyk_at.a1000words.menu.fragments.singletest.Fragment1RecyclerViewAdaptter;
+import com.kovalchyk_at.a1000words.fragments.singletest.Fragment1Item;
+import com.kovalchyk_at.a1000words.fragments.singletest.Fragment1RecyclerViewAdaptter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +36,9 @@ public class Fragment1SingleTest extends Fragment {
 
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
             gaggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        }else{if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+        }/*else{if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             gaggeredGridLayoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
-        }}
+        }}*/
         recyclerView.setLayoutManager(gaggeredGridLayoutManager);
 
         List<Fragment1Item> gaggeredList = getListItemData();
@@ -50,7 +50,7 @@ public class Fragment1SingleTest extends Fragment {
         return retView;
     }
 
-    private List<Fragment1Item> getListItemData(){
+    private List<Fragment1Item> getListItemData() {
         List<Fragment1Item> listViewItems = new ArrayList<Fragment1Item>();
         listViewItems.add(new Fragment1Item("Alkane", R.drawable.ic_menu_camera));
         listViewItems.add(new Fragment1Item("Ethane", R.drawable.abc_ic_star_black_36dp));

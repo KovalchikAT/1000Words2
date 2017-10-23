@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.menu.fragments.progress;
+package com.kovalchyk_at.a1000words.fragments.progress;
 
 /**
  * Created by Kovalchyk_at on 10.10.2017.

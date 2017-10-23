@@ -1,19 +1,19 @@
 package com.kovalchyk_at.a1000words;
 
-import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 
+import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenter;
 import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenterImpl;
+import com.kovalchyk_at.a1000words.menu.view.MenuView;
 import com.kovalchyk_at.a1000words.menu.view.MenuViewImpl;
 
 public class MenuActivity extends AppCompatActivity {
 
-    Fragment fragment = new Body1_tabbed_fragment();
-    private MenuPresenterImpl menuPresenter;
-    private MenuViewImpl menuView;
+    private MenuPresenter menuPresenter;
+    private MenuView menuView;
     private Bundle savedInstanceState;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

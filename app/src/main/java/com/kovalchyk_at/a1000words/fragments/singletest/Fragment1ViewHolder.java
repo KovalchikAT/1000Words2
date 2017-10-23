@@ -1,6 +1,5 @@
-package com.kovalchyk_at.a1000words.menu.fragments.singletest;
+package com.kovalchyk_at.a1000words.fragments.singletest;
 
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;

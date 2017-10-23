@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.menu.fragments.progress;
+package com.kovalchyk_at.a1000words.fragments.progress;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 
 import com.kovalchyk_at.a1000words.R;
+import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenter;
 import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenterImpl;
 
 /**
@@ -24,7 +25,7 @@ import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenterImpl;
 public class MenuViewImpl implements MenuView, NavigationView.OnNavigationItemSelectedListener {
 
     //UI references.
-    private MenuPresenterImpl presenter;
+    private MenuPresenter presenter;
     private Activity activity;
 
     private Toolbar toolbar;
@@ -34,7 +35,7 @@ public class MenuViewImpl implements MenuView, NavigationView.OnNavigationItemSe
     private Fragment fragment;
     private ActionBarDrawerToggle toggle;
 
-    public MenuViewImpl(MenuPresenterImpl presenter, Activity activity) {
+    public MenuViewImpl(MenuPresenter presenter, Activity activity) {
         this.presenter = presenter;
         this.activity = activity;
 
@@ -42,7 +43,7 @@ public class MenuViewImpl implements MenuView, NavigationView.OnNavigationItemSe
         initListeners();
     }
 
-    private void initView(Activity activity, MenuPresenterImpl presenter) {
+    private void initView(Activity activity, MenuPresenter presenter) {
 
         activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -57,7 +58,7 @@ public class MenuViewImpl implements MenuView, NavigationView.OnNavigationItemSe
 
         navigationView = (NavigationView) activity.findViewById(R.id.nav_view);
 
-        fragment = presenter.getFragment(0);
+        fragment = presenter.getFragment(3);
 
         fragmentManager = activity.getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment, fragment).commit();

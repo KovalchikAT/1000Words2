@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.menu.fragments;
+package com.kovalchyk_at.a1000words.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -11,17 +11,18 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import com.kovalchyk_at.a1000words.R;
-import com.kovalchyk_at.a1000words.menu.fragments.progress.FragmentProgressAdapter;
-import com.kovalchyk_at.a1000words.menu.fragments.progress.FragmentProgressGroup;
-import com.kovalchyk_at.a1000words.menu.fragments.progress.FragmentProgressItem;
+import com.kovalchyk_at.a1000words.fragments.progress.FragmentProgressAdapter;
+import com.kovalchyk_at.a1000words.fragments.progress.FragmentProgressGroup;
+import com.kovalchyk_at.a1000words.fragments.progress.FragmentProgressItem;
 
 import java.util.ArrayList;
 
 /**
  * Created by Kovalchyk_at on 10.10.2017.
+ * перегляд бібліотеки слів
  */
 
-public class Fragment3Progress extends Fragment {
+public class Fragment2Library extends Fragment {
     private static final String KEY_EXPLIST_STATE = "CURRENT_LIST";
     private static final String KEY_EXPLIST_SCROLL = "CURRENT_SCROLL";
     private static final String KEY_EXPLIST_ITEM = "CURRENT_ITEM";
@@ -52,7 +53,7 @@ public class Fragment3Progress extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View retV = inflater.inflate(R.layout.fragment2_progress, null);
+        View retV = inflater.inflate(R.layout.fragment2_library, null);
 
         expList = (ExpandableListView) retV.findViewById(R.id.expand_progress_list);
 

@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.menu.fragments.singletest;
+package com.kovalchyk_at.a1000words.fragments.singletest;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
