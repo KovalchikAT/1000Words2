@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.fragments;
+package com.kovalchyk_at.a1000words;
 
 import android.app.Fragment;
 

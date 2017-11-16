@@ -1,10 +1,9 @@
-package com.kovalchyk_at.a1000words.fragments.singletest;
+package com.kovalchyk_at.a1000words.fragments.view.choosesingletest;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kovalchyk_at.a1000words.R;
 
@@ -16,6 +15,15 @@ public class Fragment1ViewHolder extends RecyclerView.ViewHolder implements View
 
     private TextView holderName;
     private ImageView holderImg;
+
+    public Fragment1ViewHolder(View itemView) {
+        super(itemView);
+        View retV = itemView;
+        retV.setOnClickListener(this);
+
+        holderName = (TextView) retV.findViewById(R.id.holder_name);
+        holderImg = (ImageView) retV.findViewById(R.id.holder_photo);
+    }
 
     public TextView getHolderName() {
         return holderName;
@@ -33,17 +41,9 @@ public class Fragment1ViewHolder extends RecyclerView.ViewHolder implements View
         this.holderImg = holderImg;
     }
 
-    public Fragment1ViewHolder(View itemView) {
-        super(itemView);
-        View retV = itemView;
-        retV.setOnClickListener(this);
-
-        holderName = (TextView) retV.findViewById(R.id.holder_name);
-        holderImg = (ImageView) retV.findViewById(R.id.holder_photo);
-    }
-
     @Override
     public void onClick(View view) {
-        Toast.makeText(view.getContext(), "Clicked position = "+ getPosition(), Toast.LENGTH_SHORT).show();
+
+        //Toast.makeText(view.getContext(), "Clicked position = "+ getPosition(), Toast.LENGTH_SHORT).show();
     }
 }

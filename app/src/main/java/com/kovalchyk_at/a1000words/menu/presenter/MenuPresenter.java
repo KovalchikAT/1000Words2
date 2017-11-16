@@ -7,5 +7,5 @@ import android.app.Fragment;
  */
 
 public interface MenuPresenter {
-    Fragment getFragment(int i);
+    Fragment getFragment(int id);
 }

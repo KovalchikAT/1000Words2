@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.fragments.singletest;
+package com.kovalchyk_at.a1000words.fragments.presenter.choosesingletest;
 
 /**
  * Created by Kovalchyk_at on 11.10.2017.

@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words;
+package com.kovalchyk_at.a1000words.tests;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.kovalchyk_at.a1000words.R;
 
 
 public class Test0 extends Fragment {
@@ -18,4 +20,5 @@ public class Test0 extends Fragment {
         Log.d("fragm0TAG", "myLog");
         return inflater.inflate(R.layout.test0_fragment, null);
     }
+
 }

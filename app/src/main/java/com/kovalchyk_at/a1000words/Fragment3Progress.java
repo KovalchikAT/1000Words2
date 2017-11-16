@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.fragments;
+package com.kovalchyk_at.a1000words;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,34 +10,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
-import com.kovalchyk_at.a1000words.R;
-import com.kovalchyk_at.a1000words.fragments.progress.FragmentProgressAdapter;
-import com.kovalchyk_at.a1000words.fragments.progress.FragmentProgressGroup;
-import com.kovalchyk_at.a1000words.fragments.progress.FragmentProgressItem;
+import com.kovalchyk_at.a1000words.progress.FragmentProgressAdapter;
+import com.kovalchyk_at.a1000words.progress.FragmentProgressGroup;
+import com.kovalchyk_at.a1000words.progress.FragmentProgressItem;
 
 import java.util.ArrayList;
 
 /**
  * Created by Kovalchyk_at on 10.10.2017.
- * перегляд бібліотеки слів
  */
 
-public class Fragment2Library extends Fragment {
+public class Fragment3Progress extends Fragment {
     private static final String KEY_EXPLIST_STATE = "CURRENT_LIST";
     private static final String KEY_EXPLIST_SCROLL = "CURRENT_SCROLL";
     private static final String KEY_EXPLIST_ITEM = "CURRENT_ITEM";
 
     ExpandableListView expList;
-
-    private Parcelable expListState = null;
-    private int groupPosition = 0;
-    private int itemPosition = 0;
-
     String[] groupsName = new String[] {"HTC", "Samsung", "LG", "jh"};
     String[] phonesHTC = new String[] {"Sensation", "Desire", "Wildfire", "Hero"};
     String[] phonesSams = new String[] {"Galaxy S II", "Galaxy Nexus", "Wave"};
     String[] phonesLG = new String[] {"Optimus", "Optimus Link", "Optimus Black", "Optimus One"};
     String[][] items = new String[][] {phonesHTC,phonesSams,phonesLG,phonesHTC};
+    private Parcelable expListState = null;
+    private int groupPosition = 0;
+    private int itemPosition = 0;
 
     public void fillData (ArrayList<FragmentProgressGroup> groups ){
         for (int i = 0; i< groupsName.length; i++){

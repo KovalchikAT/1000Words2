@@ -11,7 +11,7 @@
     <string name="change_profile">Change profile</string>
     <string name="share">Share</string>
     <string name="testing">Begin testing</string>
-    <string name="single_test">Single test</string>
+    <string name="choose_single_test">Choose single test</string>
     <string name="library">Library</string>
     <string name="log_out">Log out</string>
     <string name="user_learning_progress">Your progress</string>

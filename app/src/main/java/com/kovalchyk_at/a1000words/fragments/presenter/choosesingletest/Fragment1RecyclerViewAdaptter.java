@@ -1,4 +1,4 @@
-package com.kovalchyk_at.a1000words.fragments.singletest;
+package com.kovalchyk_at.a1000words.fragments.presenter.choosesingletest;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kovalchyk_at.a1000words.R;
+import com.kovalchyk_at.a1000words.fragments.view.choosesingletest.Fragment1ViewHolder;
 
 import java.util.List;
 

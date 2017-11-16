@@ -2,11 +2,12 @@ package com.kovalchyk_at.a1000words.menu.presenter;
 
 import android.app.Fragment;
 
+import com.kovalchyk_at.a1000words.Fragment0StartTeaching;
+import com.kovalchyk_at.a1000words.Fragment1ChooseSingleTest;
+import com.kovalchyk_at.a1000words.Fragment2Library;
+import com.kovalchyk_at.a1000words.Fragment3Progress;
 import com.kovalchyk_at.a1000words.MenuActivity;
-import com.kovalchyk_at.a1000words.fragments.Fragment0StartTeaching;
-import com.kovalchyk_at.a1000words.fragments.Fragment1SingleTest;
-import com.kovalchyk_at.a1000words.fragments.Fragment2Library;
-import com.kovalchyk_at.a1000words.fragments.Fragment3Progress;
+import com.kovalchyk_at.a1000words.menu.model.MenuModel;
 
 /**
  * Created by Kovalchyk_at on 05.10.2017.
@@ -14,8 +15,10 @@ import com.kovalchyk_at.a1000words.fragments.Fragment3Progress;
 
 public class MenuPresenterImpl implements MenuPresenter{
     private MenuActivity menuActivitty;
+    private MenuModel menuModel;
 
-    public MenuPresenterImpl(MenuActivity menuActivity) {
+    public MenuPresenterImpl(MenuModel menuModel, MenuActivity menuActivity) {
+        this.menuModel = menuModel;
         this.menuActivitty = menuActivity;
     }
 
@@ -25,7 +28,7 @@ public class MenuPresenterImpl implements MenuPresenter{
             case 0:
                 return new Fragment0StartTeaching();
             case 1:
-                return new Fragment1SingleTest();
+                return new Fragment1ChooseSingleTest();
             case 2:
                 return new Fragment2Library();
             case 3:
