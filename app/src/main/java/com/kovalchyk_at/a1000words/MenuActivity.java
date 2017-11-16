@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.kovalchyk_at.a1000words.menu.model.MenuModel;
-import com.kovalchyk_at.a1000words.menu.model.MenuModelImpl;
 import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenter;
 import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenterImpl;
 import com.kovalchyk_at.a1000words.menu.view.MenuView;
@@ -23,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
         this.savedInstanceState = savedInstanceState;
         setContentView(R.layout.activity_menu);
 
-        menuModel = new MenuModelImpl(this);
+        menuModel = new MenuModel(this);
         menuPresenter = new MenuPresenterImpl(menuModel, this);
         menuView = new MenuViewImpl(menuPresenter, this);
     }

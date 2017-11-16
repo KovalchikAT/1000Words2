@@ -11,4 +11,6 @@ public interface FragmNPresenter {
     Fragment getChildFragment(int id);
 
     FragmentManager getFragmentManager();
+
+    Fragment getRandomChild();
 }

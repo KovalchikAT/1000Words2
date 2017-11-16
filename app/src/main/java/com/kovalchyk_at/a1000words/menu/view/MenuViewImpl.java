@@ -16,7 +16,6 @@ import android.view.WindowManager;
 
 import com.kovalchyk_at.a1000words.R;
 import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenter;
-import com.kovalchyk_at.a1000words.menu.presenter.MenuPresenterImpl;
 
 /**
  * Created by Kovalchyk_at on 05.10.2017.
@@ -50,16 +49,13 @@ public class MenuViewImpl implements MenuView, NavigationView.OnNavigationItemSe
 
         // init views
         toolbar = (Toolbar) activity.findViewById(R.id.toolbar);
-
         drawer = (DrawerLayout) activity.findViewById(R.id.drawer_layout);
 
         toggle = new ActionBarDrawerToggle(activity, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         toggle.syncState();
 
         navigationView = (NavigationView) activity.findViewById(R.id.nav_view);
-
-        fragment = presenter.getFragment(3);
-
+        fragment = presenter.getFragment(14);
         fragmentManager = activity.getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.fragment, fragment).commit();
 

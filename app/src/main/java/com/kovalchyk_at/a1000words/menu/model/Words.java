@@ -13,12 +13,12 @@ public class Words {
     private String param;          //мова слова
     private ArrayList<Integer> relatedIds; //масив що містить індекси повязаних слів(синоніми, переклади... )
 
-    public Words(Integer wordId, String word, String transcription, String param) {
+    public Words(Integer wordId, String word, String transcription, String param, ArrayList<Integer> relatedIds) {
         this.wordId = wordId;
         this.word = word;
         this.transcription = "[" + transcription + "]";
         this.param = param;
-        this.relatedIds = null;
+        this.relatedIds = relatedIds;
     }
 
     public void SetTranslate(Words words) {

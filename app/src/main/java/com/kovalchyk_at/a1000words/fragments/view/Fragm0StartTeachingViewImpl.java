@@ -55,7 +55,7 @@ public class Fragm0StartTeachingViewImpl implements FragmNView {
         currentTestCountTextView = (TextView) view.findViewById(R.id.current_tests_count);
         falseAnswerCountTextView = (TextView) view.findViewById(R.id.false_answers_count);
 
-        fragmentManager.beginTransaction().replace(R.id.tests_fragments, presenter.getChildFragment(0)).commit();
+        fragmentManager.beginTransaction().replace(R.id.tests_fragments, presenter.getRandomChild()).commit();
     }
 
     private void initListeners() {
