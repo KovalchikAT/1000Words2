@@ -37,6 +37,10 @@ public class MenuModel implements Parcelable {
 
     }
 
+    public HashMap<Integer, Words> getVokabulary() {
+        return vokabulary;
+    }
+
     @Override
     public void writeToParcel(Parcel dest, int flags) {
     }
@@ -56,4 +60,5 @@ public class MenuModel implements Parcelable {
         tmp.put(6, new Words(6, "birch", "bərch", "eng", new ArrayList<Integer>(Arrays.asList(2, 3, 4, 5, 1))));
         return tmp;
     }
+
 }

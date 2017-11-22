@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="TextView"
+                android:text=""
                 android:textSize="34dp"/>
 
             <TextView
@@ -70,12 +70,5 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:text="@string/settings"/>
-
-    <Button
-        android:id="@+id/answer5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/change_profile"/>
 
 </LinearLayout>

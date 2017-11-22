@@ -17,8 +17,9 @@ public class Test0 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              Bundle savedInstanceState) {
+        View retView = inflater.inflate(R.layout.test0_fragment, null);
         Log.d("fragm0TAG", "myLog");
-        return inflater.inflate(R.layout.test0_fragment, null);
+        return retView;
     }
 
 }

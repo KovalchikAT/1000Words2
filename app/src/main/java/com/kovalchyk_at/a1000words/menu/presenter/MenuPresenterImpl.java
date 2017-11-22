@@ -34,20 +34,20 @@ public class MenuPresenterImpl implements MenuPresenter {
                 fragm.setArguments(b);
                 return fragm;
             case 1:
-                return null;//new Fragment1ChooseSingleTest();
+                //new Fragment1ChooseSingleTest();
             case 2:
-                return null;//new Fragment2Library();
+                //new Fragment2Library();
             case 3:
-                return null;//new Fragment3Progress();
+                //new Fragment3Progress();
             case 4:
-                break;
+
             case 5:
-                break;
+
             case 6:
-                break;
+
             default://show error
                 return new StartFragment();
         }
-        return null;
+
     }
 }

@@ -44,6 +44,7 @@ public class Fragm0StartTeachingViewImpl implements FragmNView {
     private void initView(View view) {
         //мітки з іменами для лічильників в заголовку
         testStatTextView = (TextView) view.findViewById(R.id.test_stat_lable);
+
         allTestTextView = (TextView) view.findViewById(R.id.all_tests);
         trueAnswerTextView = (TextView) view.findViewById(R.id.true_answers);
         currentTestTextView = (TextView) view.findViewById(R.id.current_tests);
@@ -59,6 +60,7 @@ public class Fragm0StartTeachingViewImpl implements FragmNView {
     }
 
     private void initListeners() {
+
     }
 
 }
