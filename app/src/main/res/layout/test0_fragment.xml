@@ -1,74 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
+              android:layout_height="match_parent"
               android:dividerPadding="8dp"
               android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/word_tv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:padding="8dp"
+            android:text="@string/word"
+            android:textSize="34sp"/>
 
-            <TextView
-                android:id="@+id/word"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text=""
-                android:textSize="34dp"/>
+        <TextView
+            android:id="@+id/transcription_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/transcription"
+            android:textSize="24sp"/>
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/transcription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="[TextView]"
-                android:textSize="24dp"/>
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <Button
-        android:id="@+id/answer0"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:text="Button"/>
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/answer1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button"/>
+        <Button
+            android:id="@+id/answer0_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/answer0_bt"/>
 
-    <Button
-        android:id="@+id/answer2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/start_teaching"/>
+        <Button
+            android:id="@+id/answer1_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/answer1_bt"/>
 
-    <Button
-        android:id="@+id/answer3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/your_progress"/>
+        <Button
+            android:id="@+id/answer2_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/answer2_bt"/>
 
-    <Button
-        android:id="@+id/answer4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="@string/settings"/>
+        <Button
+            android:id="@+id/answer3_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/answer3_bt"/>
+
+        <Button
+            android:id="@+id/answer4_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/answer4_bt"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -17,4 +17,11 @@
     <string name="user_learning_progress">Your progress</string>
     <string name="user_name">User name</string>
     <string name="user_email">User@email.com</string>
+    <string name="transcription">Transcription</string>
+    <string name="word">Word</string>
+    <string name="answer0_bt">Button0</string>
+    <string name="answer1_bt">Button1</string>
+    <string name="answer2_bt">Button2</string>
+    <string name="answer3_bt">Button3</string>
+    <string name="answer4_bt">Button4</string>
 </resources>
