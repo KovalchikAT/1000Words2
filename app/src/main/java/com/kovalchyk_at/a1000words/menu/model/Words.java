@@ -10,18 +10,30 @@ public class Words {
     private Integer wordId;
     private String word;            //слово
     private String transcription;   //транскрипція
-    private String param;          //мова слова
-    private ArrayList<Integer> relatedIds; //масив що містить індекси повязаних слів(синоніми, переклади... )
+    private ArrayList<Integer> translateIds; //масив що містить індекси перекладів
+    private ArrayList<Integer> sunonimIds; //масив що містить індекси синонімів
 
-    public Words(Integer wordId, String word, String transcription, String param, ArrayList<Integer> relatedIds) {
+    public Words(Integer wordId, String word, String transcription, ArrayList<Integer> translateIds, ArrayList<Integer> sunonimIds) {
         this.wordId = wordId;
         this.word = word;
-        this.transcription = "[" + transcription + "]";
-        this.param = param;
-        this.relatedIds = relatedIds;
+        this.transcription = transcription;
+        this.translateIds = translateIds;
+        this.sunonimIds = sunonimIds;
     }
 
-    public void SetTranslate(Words words) {
-        relatedIds.add(words.wordId);
+    public String getWord() {
+        return word;
+    }
+
+    public String getTranscription() {
+        return transcription;
+    }
+
+    public ArrayList<Integer> getTranslateIds() {
+        return translateIds;
+    }
+
+    public ArrayList<Integer> getSunonimIds() {
+        return sunonimIds;
     }
 }

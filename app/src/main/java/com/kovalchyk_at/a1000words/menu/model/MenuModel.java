@@ -52,12 +52,12 @@ public class MenuModel implements Parcelable {
 
     protected HashMap<Integer, Words> initData() {
         HashMap<Integer, Words> tmp = new HashMap<>();
-        tmp.put(1, new Words(1, "tree", "trē", "eng", new ArrayList<Integer>(Arrays.asList(2, 3, 4, 5, 6))));
-        tmp.put(2, new Words(2, "дерево", "derevo", "ua", new ArrayList<Integer>(Arrays.asList(1, 3, 4, 5, 6))));
-        tmp.put(3, new Words(3, "oak", "ōk", "eng", new ArrayList<Integer>(Arrays.asList(2, 1, 4, 5, 6))));
-        tmp.put(4, new Words(4, "дуб", "dub", "ua", new ArrayList<Integer>(Arrays.asList(2, 3, 1, 5, 6))));
-        tmp.put(5, new Words(5, "береза", "bereza", "ua", new ArrayList<Integer>(Arrays.asList(2, 3, 4, 1, 6))));
-        tmp.put(6, new Words(6, "birch", "bərch", "eng", new ArrayList<Integer>(Arrays.asList(2, 3, 4, 5, 1))));
+        tmp.put(new Integer(1), new Words(1, "tree", "trē", new ArrayList<Integer>(Arrays.asList(2)), new ArrayList<Integer>(Arrays.asList(3, 6))));
+        tmp.put(new Integer(2), new Words(2, "дерево", "derevo", new ArrayList<Integer>(Arrays.asList(1)), new ArrayList<Integer>(Arrays.asList(4, 5))));
+        tmp.put(new Integer(3), new Words(3, "oak", "ōk", new ArrayList<Integer>(Arrays.asList(4)), new ArrayList<Integer>(Arrays.asList(1, 6))));
+        tmp.put(new Integer(4), new Words(4, "дуб", "dub", new ArrayList<Integer>(Arrays.asList(3)), new ArrayList<Integer>(Arrays.asList(2, 5))));
+        tmp.put(new Integer(5), new Words(5, "береза", "bereza", new ArrayList<Integer>(Arrays.asList(6)), new ArrayList<Integer>(Arrays.asList(2, 4))));
+        tmp.put(new Integer(6), new Words(6, "birch", "bərch", new ArrayList<Integer>(Arrays.asList(5)), new ArrayList<Integer>(Arrays.asList(1, 3))));
         return tmp;
     }
 
