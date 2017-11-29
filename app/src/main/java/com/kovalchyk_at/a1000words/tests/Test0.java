@@ -2,10 +2,12 @@ package com.kovalchyk_at.a1000words.tests;
 
 import android.app.Fragment;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,12 +17,15 @@ import com.kovalchyk_at.a1000words.R;
 import com.kovalchyk_at.a1000words.menu.model.MenuModel;
 import com.kovalchyk_at.a1000words.menu.model.Words;
 
+import java.util.Random;
+
 
 public class Test0 extends Fragment {
     private TextView wordTextView;
     private TextView transcriptionTextView;
-    private String trueAnswer;
+    private Words[] answer;
 
+    private Button[] answerBtn;
     private Button answerBtn0;
     private Button answerBtn1;
     private Button answerBtn2;
@@ -37,45 +42,104 @@ public class Test0 extends Fragment {
         View retView = inflater.inflate(R.layout.test0_fragment, null);
         Log.d("fragm0TAG", "myLog");
         model = getArguments().getParcelable("model");
-        initViews(retView, model.getVokabulary().get(new Integer(1)));
-
+        initViews(retView);
+        b = new Bundle();
+        b.putParcelable("model", model);
         return retView;
     }
 
-    protected void initViews(View retView, Words word) {
+
+    protected void initViews(View retView) {
         wordTextView = retView.findViewById(R.id.word_tv);
         transcriptionTextView = retView.findViewById(R.id.transcription_tv);
+        answerBtn = new Button[]{retView.findViewById(R.id.answer0_btn),
+                retView.findViewById(R.id.answer1_btn),
+                retView.findViewById(R.id.answer2_btn),
+                retView.findViewById(R.id.answer3_btn),
+                retView.findViewById(R.id.answer4_btn)};
 
-        answerBtn0 = retView.findViewById(R.id.answer0_btn);
-        answerBtn1 = retView.findViewById(R.id.answer1_btn);
-        answerBtn2 = retView.findViewById(R.id.answer2_btn);
-        answerBtn3 = retView.findViewById(R.id.answer3_btn);
-        answerBtn4 = retView.findViewById(R.id.answer4_btn);
-
-        initData(word);
+        initData();
+        initListeners();
     }
 
-    private void initData(Words word) {
+
+    private void initData() {
+        Random i = new Random();
+        int size = model.getVokabulary().size();
+        Words word = model.getVokabulary().get(new Integer(i.nextInt(size)));
         wordTextView.setText(word.getWord());
         transcriptionTextView.setText("[ " + word.getTranscription() + " ]");
+        /*                                                                                                                                      Log.e("initData", word.getWord());
+                                                                                                                                                Log.e("initData", word.getTranslateIds().toString());*/
+        int answerNumber = i.nextInt(word.translateArrSize());/*                                                                     рандомне значення з масиву перекладів*/
+        answer = new Words[5];
+        answer[0] = model.getVokabulary().get(word.getTranslateIds().get(answerNumber));
 
-        trueAnswer = model.getVokabulary().get(word.getTranslateIds().get(0/*рандомне значення з масиву перекладів*/)).getWord();
-
+        for (int j = 1; j <= 4; j++) {
+            do {
+                answerNumber = i.nextInt(model.getVokabulary().size());
+            }
+            while (answerNumber == answer[0].getWordId() || model.getVokabulary().get(answerNumber).getLanguage() != answer[0].getLanguage());
+            word = model.getVokabulary().get(answerNumber);
+            answer[j] = word;
+        }
+        answerNumber = i.nextInt(answerBtn.length);
+        for (int j = 0; j < answerBtn.length; j++) {
+            if (answerNumber < answerBtn.length) {
+                answerBtn[j].setText(answer[answerNumber].getWord());
+                answerNumber++;
+            } else {
+                answerNumber = 0;
+                answerBtn[j].setText(answer[answerNumber].getWord());
+                answerNumber++;
+            }
+        }
     }
 
-    protected void initListeners() {
-        View.OnClickListener myOnClic = new View.OnClickListener() {
+    private Boolean isTrue(Button btn) {
+        if (btn.getText() == answer[0].getWord()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void initListeners() {
+        Button.OnClickListener myOnClick = new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view.setBackgroundColor(Color.RED);
+                Fragment fragm = new Test0();
+                fragm.setArguments(b);
+                Log.e("Click", "WTF");
+                getFragmentManager().beginTransaction().replace(R.id.tests_fragments, fragm).commit();
             }
         };
 
-        answerBtn0.setOnClickListener(myOnClic);
-        answerBtn1.setOnClickListener(myOnClic);
-        answerBtn2.setOnClickListener(myOnClic);
-        answerBtn3.setOnClickListener(myOnClic);
-        answerBtn4.setOnClickListener(myOnClic);
-    }
+        Button.OnTouchListener myOnTouch = new Button.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                Button btn = (Button) view;
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (isTrue(btn)) {
+                            btn.getBackground().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
+                        } else {
+                            btn.getBackground().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
+                        }
+                        break;
 
+                    case MotionEvent.ACTION_UP:
+                        // clear color filter
+                        view.getBackground().clearColorFilter();
+                        break;
+                }
+                return false;
+            }
+        };
+
+        for (int j = 0; j < answerBtn.length; j++) {
+            answerBtn[j].setOnClickListener(myOnClick);
+            answerBtn[j].setOnTouchListener(myOnTouch);
+        }
+    }
 }

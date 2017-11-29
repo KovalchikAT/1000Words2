@@ -7,7 +7,6 @@ import android.util.Log;
 
 import com.kovalchyk_at.a1000words.menu.model.MenuModel;
 import com.kovalchyk_at.a1000words.tests.Test0;
-import com.kovalchyk_at.a1000words.tests.Test1;
 
 import java.util.Random;
 
@@ -45,7 +44,7 @@ public class Fragm0StartTeachingPresenterImpl implements FragmNPresenter {
                 return fragmentN(b, new Test0());
             default://show error
                 Log.d("MainActivity", "case def");
-                return fragmentN(b, new Test1());
+                return fragmentN(b, new Test0());
         }
     }
 

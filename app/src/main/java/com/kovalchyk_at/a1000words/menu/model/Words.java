@@ -11,14 +11,24 @@ public class Words {
     private String word;            //слово
     private String transcription;   //транскрипція
     private ArrayList<Integer> translateIds; //масив що містить індекси перекладів
-    private ArrayList<Integer> sunonimIds; //масив що містить індекси синонімів
+    private ArrayList<Integer> synonymIds; //масив що містить індекси синонімів
+    private String language;
 
-    public Words(Integer wordId, String word, String transcription, ArrayList<Integer> translateIds, ArrayList<Integer> sunonimIds) {
+    public Words(Integer wordId, String word, String transcription, ArrayList<Integer> translateIds, ArrayList<Integer> synonymIds, String language) {
         this.wordId = wordId;
         this.word = word;
         this.transcription = transcription;
         this.translateIds = translateIds;
-        this.sunonimIds = sunonimIds;
+        this.synonymIds = synonymIds;
+        this.language = language;
+    }
+
+    public int translateArrSize() {
+        return translateIds.size();
+    }
+
+    public int synonymArrSize() {
+        return translateIds.size();
     }
 
     public String getWord() {
@@ -33,7 +43,15 @@ public class Words {
         return translateIds;
     }
 
-    public ArrayList<Integer> getSunonimIds() {
-        return sunonimIds;
+    public String getLanguage() {
+        return language;
+    }
+
+    public Integer getWordId() {
+        return wordId;
+    }
+
+    public ArrayList<Integer> getSynonymIds() {
+        return synonymIds;
     }
 }
