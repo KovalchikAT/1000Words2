@@ -27,10 +27,12 @@ public class MenuModel implements Parcelable {
     };
     private MenuActivity menuActivity;
     private HashMap<Integer, Words> vokabulary;
+    private int[] answerCount;
 
     public MenuModel(MenuActivity menuActivity) {
         this.menuActivity = menuActivity;
         this.vokabulary = initData();
+        this.answerCount = new int[]{0, 0, 0, 0};
     }
 
     protected MenuModel(Parcel in) {
@@ -70,4 +72,11 @@ public class MenuModel implements Parcelable {
         return tmp;
     }
 
+    public int[] getAnswerCount() {
+        return answerCount;
+    }
+
+    public void setAnswerCount(int[] answerCount) {
+        this.answerCount = answerCount;
+    }
 }

@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,17 +24,14 @@ import java.util.Random;
 public class Test0 extends Fragment {
     private TextView wordTextView;
     private TextView transcriptionTextView;
-    private Words[] answer;
 
+    private Words[] answer;
     private Button[] answerBtn;
-    private Button answerBtn0;
-    private Button answerBtn1;
-    private Button answerBtn2;
-    private Button answerBtn3;
-    private Button answerBtn4;
+    private int[] answerCount;
 
     private MenuModel model;
     private Bundle b;
+
 
     @Nullable
     @Override
@@ -96,10 +94,20 @@ public class Test0 extends Fragment {
         }
     }
 
+    @NonNull
     private Boolean isTrue(Button btn) {
+        answerCount = model.getAnswerCount();
+        answerCount[0] =//all test
+                answerCount[1]++;//current test
         if (btn.getText() == answer[0].getWord()) {
+
+            answerCount[2]++;//true answ
+
+            model.setAnswerCount(answerCount);
             return true;
         } else {
+            answerCount[3]++;//false answ
+            model.setAnswerCount(answerCount);
             return false;
         }
     }
