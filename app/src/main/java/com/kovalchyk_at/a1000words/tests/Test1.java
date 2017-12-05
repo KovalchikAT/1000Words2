@@ -3,7 +3,6 @@ package com.kovalchyk_at.a1000words.tests;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +30,6 @@ public class Test1 extends Fragment {
         View retView = inflater.inflate(R.layout.test0_fragment, null);
         initViews(retView);
         initListeners();
-        Log.d("fragm0TAG", "myLog");
-
         return retView;
     }
 
@@ -51,8 +48,6 @@ public class Test1 extends Fragment {
         View.OnClickListener myOnClic = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //vreifyAnswer();
-                //view.setBackgroundColor();
             }
         };
         answerBtn0.setOnClickListener(myOnClic);

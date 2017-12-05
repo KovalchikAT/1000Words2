@@ -6,7 +6,6 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -38,7 +37,6 @@ public class Test0 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              Bundle savedInstanceState) {
         View retView = inflater.inflate(R.layout.test0_fragment, null);
-        Log.d("fragm0TAG", "myLog");
         model = getArguments().getParcelable("model");
         initViews(retView);
         b = new Bundle();
@@ -97,16 +95,16 @@ public class Test0 extends Fragment {
     @NonNull
     private Boolean isTrue(Button btn) {
         answerCount = model.getAnswerCount();
-        answerCount[0] =//all test
-                answerCount[1]++;//current test
+        answerCount[0] = 1000;//all tes
+        answerCount[1]++;//current test
         if (btn.getText() == answer[0].getWord()) {
 
-            answerCount[2]++;//true answ
+            answerCount[2]++;//true answer
 
             model.setAnswerCount(answerCount);
             return true;
         } else {
-            answerCount[3]++;//false answ
+            answerCount[3]++;//false answer
             model.setAnswerCount(answerCount);
             return false;
         }
@@ -118,7 +116,6 @@ public class Test0 extends Fragment {
             public void onClick(View view) {
                 Fragment fragm = new Test0();
                 fragm.setArguments(b);
-                Log.e("Click", "WTF");
                 getFragmentManager().beginTransaction().replace(R.id.tests_fragments, fragm).commit();
             }
         };
