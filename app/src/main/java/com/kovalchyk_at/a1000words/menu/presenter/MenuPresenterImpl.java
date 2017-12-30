@@ -23,7 +23,6 @@ public class MenuPresenterImpl implements MenuPresenter {
         this.menuActivitty = menuActivity;
         b = new Bundle();
         b.putParcelable("model", menuModel);
-
     }
 
     public Fragment getFragment(int id) {

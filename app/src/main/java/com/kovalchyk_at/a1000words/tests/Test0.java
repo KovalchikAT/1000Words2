@@ -19,7 +19,6 @@ import com.kovalchyk_at.a1000words.menu.model.Words;
 
 import java.util.Random;
 
-
 public class Test0 extends Fragment {
     private TextView wordTextView;
     private TextView transcriptionTextView;
@@ -30,7 +29,6 @@ public class Test0 extends Fragment {
 
     private MenuModel model;
     private Bundle b;
-
 
     @Nullable
     @Override
@@ -44,7 +42,6 @@ public class Test0 extends Fragment {
         return retView;
     }
 
-
     protected void initViews(View retView) {
         wordTextView = retView.findViewById(R.id.word_tv);
         transcriptionTextView = retView.findViewById(R.id.transcription_tv);
@@ -53,11 +50,9 @@ public class Test0 extends Fragment {
                 retView.findViewById(R.id.answer2_btn),
                 retView.findViewById(R.id.answer3_btn),
                 retView.findViewById(R.id.answer4_btn)};
-
         initData();
         initListeners();
     }
-
 
     private void initData() {
         Random i = new Random();
@@ -146,5 +141,13 @@ public class Test0 extends Fragment {
             answerBtn[j].setOnClickListener(myOnClick);
             answerBtn[j].setOnTouchListener(myOnTouch);
         }
+    }
+
+    public int[] getAnswerCount() {
+        return answerCount;
+    }
+
+    public void setAnswerCount(int[] answerCount) {
+        this.answerCount = answerCount;
     }
 }

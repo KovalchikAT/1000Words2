@@ -8,9 +8,12 @@ import android.app.FragmentManager;
  */
 
 public interface FragmNPresenter {
+    int[] getCounterAnswer(Fragment fragm);
+
     Fragment getChildFragment(int id);
 
     FragmentManager getFragmentManager();
 
     Fragment getRandomChild();
+
 }

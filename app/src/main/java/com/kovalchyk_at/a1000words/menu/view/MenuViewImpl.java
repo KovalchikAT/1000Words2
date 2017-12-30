@@ -80,20 +80,28 @@ public class MenuViewImpl implements MenuView, NavigationView.OnNavigationItemSe
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.testing_button) {
-            fragment = presenter.getFragment(0);
-        } else if (id == R.id.single_test_button) {
-            fragment = presenter.getFragment(1);
-        } else if (id == R.id.library_button) {
-            fragment = presenter.getFragment(2);
-        } else if (id == R.id.show_progress_button) {
-            fragment = presenter.getFragment(3);
-        } else if (id == R.id.change_profile_button) {
-            fragment = presenter.getFragment(4);
-        } else if (id == R.id.nav_share) {
-            fragment = presenter.getFragment(5);
-        } else if (id == R.id.log_out) {
-            fragment = presenter.getFragment(6);
+        switch (item.getItemId()) {
+            case R.id.testing_button:
+                fragment = presenter.getFragment(0);
+                break;
+            case R.id.single_test_button:
+                fragment = presenter.getFragment(1);
+                break;
+            case R.id.library_button:
+                fragment = presenter.getFragment(2);
+                break;
+            case R.id.show_progress_button:
+                fragment = presenter.getFragment(3);
+                break;
+            case R.id.change_profile_button:
+                fragment = presenter.getFragment(4);
+                break;
+            case R.id.nav_share:
+                fragment = presenter.getFragment(5);
+                break;
+            case R.id.log_out:
+                fragment = presenter.getFragment(6);
+                break;
         }
 
         if (fragment != null) {

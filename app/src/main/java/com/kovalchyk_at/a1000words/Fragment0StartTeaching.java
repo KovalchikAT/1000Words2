@@ -36,7 +36,6 @@ public class Fragment0StartTeaching extends Fragment {
         menuModel = getArguments().getParcelable("model");
         fragmentPresenter = new Fragm0StartTeachingPresenterImpl(menuModel, this);
         fragmentView = new Fragm0StartTeachingViewImpl(fragmentPresenter, retView);
-
         return retView;
     }
 }

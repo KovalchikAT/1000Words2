@@ -6,4 +6,5 @@ package com.kovalchyk_at.a1000words.fragments.view;
 
 public interface FragmNView {
 
+    void counterSet(int[] answerCount);
 }

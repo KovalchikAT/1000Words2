@@ -1,7 +1,9 @@
 package com.kovalchyk_at.a1000words.fragments.presenter;
 
+import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -20,6 +22,7 @@ public class Fragm0StartTeachingPresenterImpl implements FragmNPresenter {
     private MenuModel model;
     private Bundle b;
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public Fragm0StartTeachingPresenterImpl(MenuModel menuModel, Fragment activity) {
         this.model = menuModel;
         this.activity = activity;
@@ -36,15 +39,24 @@ public class Fragm0StartTeachingPresenterImpl implements FragmNPresenter {
     }
 
     @Override
-    public Fragment getChildFragment(int id) {
+    public int[] getCounterAnswer(Fragment fragm) {
+        return new int[0];
+    }
 
+    @Override
+    public Fragment getChildFragment(int id) {
+        Fragment fragm;
         switch (id) {
             case 0:
                 Log.d("MainActivity", "case 0");
-                return fragmentN(b, new Test0());
+                fragm = new Test0();
+                fragm.setArguments(b);
+                return fragm;
             default://show error
                 Log.d("MainActivity", "case def");
-                return fragmentN(b, new Test0());
+                fragm = new Test0();
+                fragm.setArguments(b);
+                return fragm;
         }
     }
 
@@ -53,8 +65,4 @@ public class Fragm0StartTeachingPresenterImpl implements FragmNPresenter {
         return fragmentManager;
     }
 
-    private Fragment fragmentN(Bundle b, Fragment fragm) {
-        fragm.setArguments(b);
-        return fragm;
-    }
 }

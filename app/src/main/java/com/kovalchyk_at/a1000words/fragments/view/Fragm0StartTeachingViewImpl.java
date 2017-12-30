@@ -27,11 +27,8 @@ public class Fragm0StartTeachingViewImpl implements FragmNView {
     private TextView currentTestCountTextView;
     private TextView falseAnswerCountTextView;
 
-
-
     private Fragment content;
     private FragmentManager fragmentManager;
-
 
     public Fragm0StartTeachingViewImpl(FragmNPresenter presenter, View view) {
         this.presenter = presenter;
@@ -56,11 +53,17 @@ public class Fragm0StartTeachingViewImpl implements FragmNView {
         currentTestCountTextView = (TextView) view.findViewById(R.id.current_tests_count);
         falseAnswerCountTextView = (TextView) view.findViewById(R.id.false_answers_count);
 
-        fragmentManager.beginTransaction().replace(R.id.tests_fragments, presenter.getRandomChild()).commit();
+        Fragment fragm = presenter.getRandomChild();
+        fragmentManager.beginTransaction().replace(R.id.tests_fragments, fragm).commit();
+    }
+
+    public void counterSet(int[] answerCount) {
+        allTestCountTextView.setText(answerCount[0]);
+        trueAnswerCountTextView.setText(answerCount[1]);
+        currentTestCountTextView.setText(answerCount[2]);
+        falseAnswerCountTextView.setText(answerCount[3]);
     }
 
     private void initListeners() {
-
     }
-
 }

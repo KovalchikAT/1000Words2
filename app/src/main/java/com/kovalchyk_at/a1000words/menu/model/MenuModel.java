@@ -32,11 +32,13 @@ public class MenuModel implements Parcelable {
     public MenuModel(MenuActivity menuActivity) {
         this.menuActivity = menuActivity;
         this.vokabulary = initData();
-        this.answerCount = new int[]{0, 0, 0, 0};
+        this.answerCount = new int[]{0/*кількість загальна*/,
+                0/*поточний тест*/,
+                0/*кількість правильних відповідей*/,
+                0/*кількість неправильних відповідей*/};
     }
 
     protected MenuModel(Parcel in) {
-
     }
 
     public HashMap<Integer, Words> getVokabulary() {
